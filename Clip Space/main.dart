@@ -1,6 +1,7 @@
 library main;
 import 'dart:html';
 import 'dart:web_gl';
+import 'scene.dart' as scene;
 
 RenderingContext gl;
 
@@ -16,8 +17,10 @@ void main()
   window.onResize.listen((_) => onResize());
   onResize();
   
-  gl.clearColor(1, 0, 0, 1);
+  gl.clearColor(1, 1, 1, 1);
   gl.clear(COLOR_BUFFER_BIT);
+  
+  scene.init(gl);
 }
 
 void onResize()
